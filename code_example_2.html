@@ -1,0 +1,384 @@
+<div class="container">
+    <!-- Externe Ressourcen -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8em;
+            background-color: #1c1c1c;
+            overflow-x: hidden;
+            font-size:1.6rem !important;
+        }
+
+        /* Große H1-Überschrift */
+        .headline-big {
+            font-family: 'Playfair Display', serif;
+            font-size: 7rem;
+            color: #f4f4f4;
+            text-transform: uppercase;
+            line-height: 1.1em;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        /* Mittlere H1-Überschrift */
+        .headline-medium {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: #f4f4f4;
+            text-transform: uppercase;
+            line-height: 1.1em;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .highlight {
+            color: #e2204b;
+        }
+
+        .subheadline {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color: #e2204b;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            text-align: left;
+        }
+
+        .text strong {
+            font-weight: 700;
+            color: #f4f4f4;
+        }
+
+        .text:first-letter {
+            font-size: 4em;
+            font-family: 'Playfair Display', serif;
+            float: left;
+            margin-right: 10px;
+            line-height: 1;
+            color: #f4f4f4;
+        }
+
+        .large-text {
+            font-size: 4.5rem;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            color: #f4f4f4;
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+        }
+
+        .quote {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            font-style: italic;
+            color: #f4f4f4;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .quote::before,
+        .quote::after {
+            content: '"';
+            font-size: 5.5rem;
+            color: #e2204b;
+        }
+
+        .absolute-image-1,
+        .absolute-image-2 {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .absolute-image-1 {
+            top: -50px;
+            right: -150px;
+            width: 400px;
+            height: auto;
+        }
+
+        .absolute-image-2 {
+            bottom: -100px;
+            left: -100px;
+            width: 350px;
+            height: auto;
+        }
+
+        .img-fit {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Full-width sections */
+        .full-width {
+            grid-column: 1 / span 3;
+        }
+
+        /* 3/4 Split */
+        .three-four-split .col-md-3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Zoom Effect */
+        .zoom-effect-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .zoom-effect-container img {
+            animation: zoomInOut 10s ease-in-out infinite;
+            width: 100%;
+            height: auto;
+            transform-origin: center center;
+        }
+
+        @keyframes zoomInOut {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Read More Button */
+        .read-more-btn {
+            background-color: #e2204b;
+            color: white !important;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .read-more-btn i {
+            margin-left: 10px;
+        }
+
+        /* Box Section */
+        .box-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+
+        .box {
+            background-color: #2a2a2a;
+            width: 32%;
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .box img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .box-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #f4f4f4;
+            margin-bottom: 15px;
+        }
+
+        .box-text {
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .box-btn {
+            background-color: #e2204b;
+            color: white !important;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            text-decoration: none;
+        }
+
+        .box-btn i {
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .headline-big {
+                font-size: 4.5rem;
+            }
+
+            .headline-medium {
+                font-size: 2.5rem;
+            }
+
+            .quote {
+                font-size: 3rem;
+            }
+
+            .box-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .box {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+
+         <!-- Absolute positioned images -->
+         <img src="https://images.unsplash.com/photo-1485518882345-15568b007407?q=80&w=2542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3" alt="Fashion Image" class="absolute-image-1">
+         <img src="https://images.unsplash.com/photo-1503342452485-86a025a9e33a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDN8fGZhc2hpb258fDB8fHx8MTY5MTQ4MjgyMw&ixlib=rb-1.2.1&q=80&w=1080" alt="Fashion Image" class="absolute-image-2">
+ 
+
+    <!-- Grid Section with Big Headline -->
+    <div class="row">
+        <div class="col-12">
+            <div class="headline-big">The <span class="highlight">Essence</span> of Modern Elegance</div>
+            <div class="subheadline">Defining a Timeless Style</div>
+        </div>
+        <div class="col-12">
+            <div class="text">
+                Fashion is not just about clothing; it's an art form that expresses individuality. In today's world, where trends come and go, modern elegance stands the test of time. It's about the way we carry ourselves and the choices we make in our wardrobe that define who we are. <strong>Elegance</strong> is not just about expensive clothes but about the right attitude.
+                <br>
+                <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-width image section with Zoom Effect -->
+    <div class="row">
+        <div class="col-12 zoom-effect-container">
+            <img src="https://images.unsplash.com/photo-1531746244603-771e038e9d5c?q=80&w=2608&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fashion Image" class="img-fit" style="max-height:550px;">
+        </div>
+    </div>
+
+    <!-- First grid section -->
+    <div class="row">
+        <div class="col-md-6">
+            <img src="https://images.unsplash.com/photo-1555368542-fd6d965a5bcd?q=80&w=2558&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fashion Image" class="img-fit">
+        </div>
+        <div class="col-md-6">
+            <div class="headline-medium">A Journey Through <span class="highlight">Timeless</span> Trends</div>
+            <div class="subheadline">Past, Present, and Future</div>
+            <div class="text">
+                <strong>Fashion has always been a reflection of the times.</strong> From the flapper dresses of the roaring twenties to the bold power suits of the eighties, today we see a resurgence of these iconic styles, reimagined for the modern era. Designers are looking to the past to inspire the future, creating pieces that are both nostalgic and forward-thinking.
+                <br>
+                <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-width text section -->
+    <div class="row">
+        <div class="col-12">
+            <div class="text">
+                From the iconic designs of the past to the forward-thinking trends of today, fashion remains a powerful force in shaping culture and identity. As we move through the seasons, we carry with us the rich history of style, reinterpreting it to suit our own individual tastes and desires.
+                <br>
+                <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3/4 Split Section with Zoom Effect -->
+    <div class="row three-four-split">
+        <div class="col-md-3">
+            <div class="headline-medium">The Power of <span class="highlight">Minimalism</span></div>
+            <div class="subheadline">Less is More</div>
+        </div>
+        <div class="col-md-9 zoom-effect-container">
+            <img src="https://images.unsplash.com/photo-1518031756411-d9dd4feaed65?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fashion Image" class="img-fit">
+        </div>
+    </div>
+
+    <!-- Full-width image section -->
+    <div class="row">
+        <div class="col-12">
+            <img src="https://images.unsplash.com/photo-1518578037513-589e72d9aaf7?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fashion Image" class="img-fit">
+        </div>
+    </div>
+
+    <!-- Large text section -->
+    <div class="row">
+        <div class="col-12">
+            <div class="large-text">
+                Face <span class="highlight">Your</span> Style
+            </div>
+            <div class="text">
+                Fashion is more than just a means to cover our bodies; it is a language that speaks to the world about who we are. <strong>Your style is a reflection of your identity</strong>, your passions, and your aspirations. Embrace it with confidence, and let your wardrobe be a canvas upon which you paint the story of your life.
+                <br>
+                <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote Section -->
+    <div class="row">
+        <div class="col-12">
+            <div class="quote">Fashion is the armor to survive the reality of everyday life.</div>
+        </div>
+    </div>
+
+    <!-- Three Boxes Section -->
+    <div class="box-container">
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1593878024377-b38927fc7689?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Box Image">
+            <div class="box-title">Discover New Trends</div>
+            <div class="box-text">Stay ahead of the fashion curve with the latest trends and styles curated just for you.</div>
+            <a href="#" class="box-btn">Explore <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1547976152-ac956d37caf1?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Box Image">
+            <div class="box-title">Elevate Your Wardrobe</div>
+            <div class="box-text">Transform your look with key pieces that bring sophistication and style to your everyday wear.</div>
+            <a href="#" class="box-btn">Shop Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1550402537-6f7b6189b3b6?q=80&w=1969&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Box Image">
+            <div class="box-title">Join the Movement</div>
+            <div class="box-text">Be part of a community that values fashion, creativity, and sustainable practices.</div>
+            <a href="#" class="box-btn">Get Involved <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</div>
