@@ -1,0 +1,31 @@
+<section id=""> 
+
+    <!-- Quote Section -->
+    <div class="row">
+        <div class="col-12">
+            <div class="quote">{{PLACEHOLDER}}</div>
+        </div>
+    </div>
+
+    <!-- Three Boxes Section -->
+    <div class="box-container">
+        <div class="box">
+            <img src="{{PLACEHOLDER}}" alt="Box Image">
+            <div class="box-title">Discover New Trends</div>
+            <div class="box-text">{{PLACEHOLDER}}</div>
+            <a href="#" class="box-btn">Explore <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="box">
+            <img src="{{PLACEHOLDER}}" alt="{{PLACEHOLDER}}">
+            <div class="box-title">{{PLACEHOLDER}}</div>
+            <div class="box-text">{{PLACEHOLDER}}</div>
+            <a href="#" class="box-btn">Shop Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1550402537-6f7b6189b3b6?q=80&w=1969&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Box Image">
+            <div class="box-title">{{PLACEHOLDER}}</div>
+            <div class="box-text">{{PLACEHOLDER}}</div>
+            <a href="#" class="box-btn">Get Involved <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
