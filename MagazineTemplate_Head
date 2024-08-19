@@ -1,4 +1,13 @@
 <section id="head">    
+      <!-- Externe Ressourcen -->
+   
+
+         <!-- Absolute positioned images -->
+         <img src="{{PLACEHOLDER}}" alt="{{PLACEHOLDER}}" class="absolute-image-1">
+         <img src="{{PLACEHOLDER}}" alt="{{PLACEHOLDER}}" class="absolute-image-2">
+ 
+
+    <!-- Grid Section with Big Headline -->
 <div class="row">
         <div class="col-12">
             <div class="headline-big"><h1>{{PLACEHOLDER}} <span class="highlight">{{PLACEHOLDER}}</span> {{PLACEHOLDER}}</h1></div>
