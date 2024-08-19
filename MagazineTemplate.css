@@ -129,6 +129,7 @@
 #AUTTTOM .text strong {
     font-weight: 700;
     color: var(--main-text-color);
+    display:inline;
 }
 
 #AUTTTOM .col-12 .text:first-letter,
@@ -146,6 +147,7 @@
     font-family: 'Playfair Display', serif;
     text-transform: uppercase;
     color: var(--main-text-color);
+    margin-top: 30px;
     margin-bottom: 30px;
     letter-spacing: -0.02em;
     line-height: 1em;
@@ -216,6 +218,7 @@
 #AUTTTOM .row {
     display: flex;
     align-items: stretch;
+    margin-top:30px;
 }
 
 #AUTTTOM .col-6 {
