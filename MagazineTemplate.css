@@ -22,6 +22,7 @@
         text-transform: uppercase;
         line-height: 1.1em;
         margin-bottom: 20px;
+        margin-top: 20px;
         letter-spacing: -0.02em;
     }
 
@@ -64,8 +65,7 @@
         color: #f4f4f4;
     }
 
-    .text:first-letter {
-        font-size: 4em;
+    .col-12 .text:first-letter , .col-6:first-child .text:first-letter {        font-size: 4em;
         font-family: 'Playfair Display', serif;
         float: left;
         margin-right: 10px;
