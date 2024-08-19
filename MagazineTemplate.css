@@ -68,12 +68,13 @@
 #AUTTTOM {
     font-family: 'Roboto', sans-serif;
     color: var(--main-text-color);
-    background-color: var(--background-color);
+    /*background-color: var(--background-color);*/
     margin: 0;
     padding: 0;
     line-height: 1.8em;
     overflow-x: hidden;
     font-size: 1.6rem !important;
+    text-align:left;
 }
 
 #AUTTTOM section {
@@ -286,8 +287,8 @@
 }
 
 #AUTTTOM img {
-    max-height: 500px;
-    min-height: 300px;
+    max-height: 500px !important;
+    min-height: 300px !important;
 }
 
 #AUTTTOM .box-title {
