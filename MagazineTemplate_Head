@@ -1,8 +1,8 @@
 <section id="head">    
 <div class="row">
         <div class="col-12">
-            <div class="headline-big">{{PLACEHOLDER}} <span class="highlight">{{PLACEHOLDER}}</span> {{PLACEHOLDER}}</div>
-            <div class="subheadline">{{PLACEHOLDER}}</div>
+            <div class="headline-big"><h1>{{PLACEHOLDER}} <span class="highlight">{{PLACEHOLDER}}</span> {{PLACEHOLDER}}</h1></div>
+            <div class="subheadline"><h2>{{PLACEHOLDER}}</h2></div>
         </div>
         <div class="col-12">
             <div class="text">
