@@ -40,7 +40,7 @@
         color: #e2204b;
     }
 
-    .subheadline {
+    .subheadline, h2 {
         font-family: 'Roboto', sans-serif;
         font-weight: 700;
         font-size: 2rem;

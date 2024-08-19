@@ -10,8 +10,8 @@
     <!-- Grid Section with Big Headline -->
 <div class="row">
         <div class="col-12">
-            <div class="headline-big"><h1>{{PLACEHOLDER}} <span class="highlight">{{PLACEHOLDER}}</span> {{PLACEHOLDER}}</h1></div>
-            <div class="subheadline"><h2>{{PLACEHOLDER}}</h2></div>
+            <h1><div class="headline-big">{{PLACEHOLDER}} <span class="highlight">{{PLACEHOLDER}}</span> {{PLACEHOLDER}}</div></h1>
+            <h2><div class="subheadline">{{PLACEHOLDER}}</div></h2>
         </div>
         <div class="col-12">
             <div class="text">
