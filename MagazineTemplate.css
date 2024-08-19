@@ -38,6 +38,33 @@
 
 
 <style>
+
+:root {
+    --main-text-color-light: #1c1c1c;
+    --background-color-light: #f4f4f4;
+    --highlight-color-light: #d62728;
+    --secondary-text-color-light: #4f4f4f;
+
+    --main-text-color-dark: #f4f4f4;
+    --background-color-dark: #1c1c1c;
+    --highlight-color-dark: #e2204b;
+    --secondary-text-color-dark: #e0e0e0;
+}
+
+.light-mode {
+    --main-text-color: var(--main-text-color-light);
+    --background-color: var(--background-color-light);
+    --highlight-color: var(--highlight-color-light);
+    --secondary-text-color: var(--secondary-text-color-light);
+}
+
+.dark-mode {
+    --main-text-color: var(--main-text-color-dark);
+    --background-color: var(--background-color-dark);
+    --highlight-color: var(--highlight-color-dark);
+    --secondary-text-color: var(--secondary-text-color-dark);
+}
+
 #AUTTTOM {
     font-family: 'Roboto', sans-serif;
     color: var(--main-text-color);
