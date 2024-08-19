@@ -53,6 +53,10 @@
         margin-bottom: 30px;
         color: #e0e0e0;
         text-align: left;
+
+        display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     }
 
     .text strong {
@@ -76,6 +80,7 @@
         color: #f4f4f4;
         margin-bottom: 30px;
         letter-spacing: -0.02em;
+        line-height:1em;
     }
 
     .quote {
@@ -145,6 +150,16 @@
         width: 100%;
         height: auto;
         transform-origin: center center;
+    }
+
+    .row {
+        display: flex;
+        align-items: stretch;
+    }
+    
+    .col-6 {
+        flex: 1;
+        padding: 0 10px;
     }
 
     @keyframes zoomInOut {
