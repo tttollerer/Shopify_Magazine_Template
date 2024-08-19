@@ -2,27 +2,88 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" >
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
-<style>
-    body {
-        font-family: 'Roboto', sans-serif;
-        color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-        line-height: 1.8em;
-        background-color: #1c1c1c;
-        overflow-x: hidden;
-        font-size:1.6rem !important;
+<script>
+    function getLuminance(r, g, b) {
+        const a = [r, g, b].map(function (v) {
+            v /= 255;
+            return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+        });
+        return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
     }
 
+    function rgbStringToArray(rgbString) {
+        const rgb = rgbString.match(/\d+/g);
+        return rgb.map(Number);
+    }
+
+    function applyColorSchemeBasedOnBackground() {
+        const bgColor = window.getComputedStyle(document.body).backgroundColor;
+        const [r, g, b] = rgbStringToArray(bgColor);
+        const luminance = getLuminance(r, g, b);
+
+        if (luminance > 0.5) {
+            // Heller Hintergrund
+            document.documentElement.classList.add('light-mode');
+            document.documentElement.classList.remove('dark-mode');
+        } else {
+            // Dunkler Hintergrund
+            document.documentElement.classList.add('dark-mode');
+            document.documentElement.classList.remove('light-mode');
+        }
+    }
+
+    window.addEventListener('load', applyColorSchemeBasedOnBackground);
+    window.addEventListener('resize', applyColorSchemeBasedOnBackground);
+</script>
+
+
+<style>
+:root {
+    --main-text-color-light: #1c1c1c;
+    --background-color-light: #f4f4f4;
+    --highlight-color-light: #d62728;
+    --secondary-text-color-light: #4f4f4f;
+
+    --main-text-color-dark: #f4f4f4;
+    --background-color-dark: #1c1c1c;
+    --highlight-color-dark: #e2204b;
+    --secondary-text-color-dark: #e0e0e0;
+}
+
+.light-mode {
+    --main-text-color: var(--main-text-color-light);
+    --background-color: var(--background-color-light);
+    --highlight-color: var(--highlight-color-light);
+    --secondary-text-color: var(--secondary-text-color-light);
+}
+
+.dark-mode {
+    --main-text-color: var(--main-text-color-dark);
+    --background-color: var(--background-color-dark);
+    --highlight-color: var(--highlight-color-dark);
+    --secondary-text-color: var(--secondary-text-color-dark);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--main-text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.8em;
+    overflow-x: hidden;
+    font-size: 1.6rem !important;
+}
+
     section {
-        margin-top:30px;
+        margin-top: 30px;
     }
 
     /* Große H1-Überschrift */
     .headline-big {
         font-family: 'Playfair Display', serif;
         font-size: 7rem;
-        color: #f4f4f4;
+        color: var(--main-text-color);
         text-transform: uppercase;
         line-height: 1.1em;
         margin-bottom: 20px;
@@ -34,7 +95,7 @@
     .headline-medium {
         font-family: 'Playfair Display', serif;
         font-size: 4rem;
-        color: #f4f4f4;
+        color: var(--main-text-color);
         text-transform: uppercase;
         line-height: 1.1em;
         margin-bottom: 20px;
@@ -42,56 +103,57 @@
     }
 
     .highlight {
-        color: #e2204b;
+        color: var(--highlight-color);
     }
 
     .subheadline, h2 {
         font-family: 'Roboto', sans-serif;
         font-weight: 700;
         font-size: 2rem;
-        color: #e2204b;
+        color: var(--highlight-color);
         text-transform: uppercase;
         margin-bottom: 30px;
     }
 
     .text {
         margin-bottom: 30px;
-        color: #e0e0e0;
+        color: var(--secondary-text-color);
         text-align: left;
-
         display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .text strong {
         font-weight: 700;
-        color: #f4f4f4;
+        color: var(--main-text-color);
     }
 
-    .col-12 .text:first-letter , .col-6:first-child .text:first-letter {        font-size: 4em;
+    .col-12 .text:first-letter,
+    .col-6:first-child .text:first-letter {
+        font-size: 4em;
         font-family: 'Playfair Display', serif;
         float: left;
         margin-right: 10px;
         line-height: 1;
-        color: #f4f4f4;
+        color: var(--main-text-color);
     }
 
     .large-text {
         font-size: 4.5rem;
         font-family: 'Playfair Display', serif;
         text-transform: uppercase;
-        color: #f4f4f4;
+        color: var(--main-text-color);
         margin-bottom: 30px;
         letter-spacing: -0.02em;
-        line-height:1em;
+        line-height: 1em;
     }
 
     .quote {
         font-family: 'Dancing Script', cursive;
         font-size: 5rem;
         font-style: italic;
-        color: #f4f4f4;
+        color: var(--main-text-color);
         text-align: center;
         margin: 50px 0;
     }
@@ -100,7 +162,7 @@
     .quote::after {
         content: '"';
         font-size: 5.5rem;
-        color: #e2204b;
+        color: var(--highlight-color);
     }
 
     .absolute-image-1,
@@ -123,7 +185,6 @@
         width: 350px;
         height: auto;
     }
-   
 
     /* Full-width sections */
     .full-width {
@@ -154,7 +215,7 @@
         display: flex;
         align-items: stretch;
     }
-    
+
     .col-6 {
         flex: 1;
         padding: 0 10px;
@@ -174,8 +235,8 @@
 
     /* Read More Button */
     .read-more-btn {
-        background-color: #e2204b;
-        color: white !important;
+        background-color: var(--highlight-color);
+        color: var(--white-color) !important;
         padding: 10px 20px;
         text-transform: uppercase;
         font-weight: 700;
@@ -202,15 +263,13 @@
     }
 
     .box {
-        background-color: #2a2a2a;
+        background-color: var(--box-background-color);
         width: 32%;
         padding: 20px;
         text-align: center;
         border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 8px var(--box-shadow-color);
     }
-
-
 
     .img-fit {
         width: 100%;
@@ -224,23 +283,27 @@
         border-radius: 15px;
         margin-bottom: 15px;
     }
-    img {max-height:500px;min-height:300px}
+
+    img {
+        max-height: 500px;
+        min-height: 300px;
+    }
 
     .box-title {
         font-family: 'Playfair Display', serif;
         font-size: 2rem;
-        color: #f4f4f4;
+        color: var(--main-text-color);
         margin-bottom: 15px;
     }
 
     .box-text {
-        color: #e0e0e0;
+        color: var(--secondary-text-color);
         margin-bottom: 20px;
     }
 
     .box-btn {
-        background-color: #e2204b;
-        color: white !important;
+        background-color: var(--highlight-color);
+        color: var(--white-color) !important;
         padding: 10px 20px;
         text-transform: uppercase;
         font-weight: 700;
